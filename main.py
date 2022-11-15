@@ -18,21 +18,27 @@ servo.value = None
 
 def robot():
         time.sleep(1)
-        servo.value = -0.8
+        servo.value = -0.8 
+	#Move servo to push button
         time.sleep(0.25)
-        led.toggle()
-        servo.value = None
+        led.toggle() 
+	#Turn led off
+        servo.value = None 
+	#Servo doesn't move and also doesn't make sound
         time.sleep(1)
-        servo.value = 1
+        servo.value = 1 
+	#Move servo back to basic
         time.sleep(0.5)
         servo.value = None
+	#Servo doesn't move and also doesn't make sound
         main()
 
 def button_led():
 	while True:
 		if button.is_pressed:
 			print('button is pressed')
-			led.toggle()
+			led.toggle() 
+			#Turn led on
 			time.sleep(0.5)
 			robot()
 def main():
